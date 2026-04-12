@@ -86,6 +86,10 @@ Client-side via Fuse.js. The index is a static Route Handler at `/api/search-ind
 - `params` and `searchParams` props in page/layout components are **Promises** in Next.js 15+ and must be `await`ed. In Route Handlers, `request.nextUrl.searchParams` is a synchronous Web API `URLSearchParams` — do not await it.
 - The 3-column reading layout (Sidebar + content + TOC) hides `Sidebar` on `< lg` and `TableOfContents` on `< xl`. `MobileSidebar` provides chapter navigation on mobile via a bottom drawer (chapter pages only).
 
+## Workflow conventions
+
+- **Adding new content**: whenever a new chapter, post, or book is created, ask the user whether they want to add an `AudioPlayer` to it before finishing.
+
 ## Environment variables
 
 ```bash

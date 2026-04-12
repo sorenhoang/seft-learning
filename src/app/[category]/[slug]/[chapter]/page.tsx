@@ -7,6 +7,7 @@ import Sidebar from "@/components/layout/Sidebar";
 import MobileSidebar from "@/components/layout/MobileSidebar";
 import MarkdownRenderer from "@/components/content/MarkdownRenderer";
 import TableOfContents from "@/components/content/TableOfContents";
+import AudioPlayer from "@/components/content/AudioPlayer";
 
 interface PageProps {
   params: Promise<{ category: string; slug: string; chapter: string }>;
@@ -60,7 +61,7 @@ export default async function ChapterPage({ params }: PageProps) {
   const prevChapter = book.chapters[currentIndex - 1] ?? null;
   const nextChapter = book.chapters[currentIndex + 1] ?? null;
 
-  const { content } = getChapterContent(category, slug, chapter);
+  const { content, data: frontmatter } = getChapterContent(category, slug, chapter);
   const html = await markdownToHtml(content);
   const toc = extractToc(content);
 
@@ -109,6 +110,8 @@ export default async function ChapterPage({ params }: PageProps) {
               </div>
             )}
           </header>
+
+          <AudioPlayer content={content} lang={frontmatter.lang as string | undefined} />
 
           <MarkdownRenderer html={html} />
 
