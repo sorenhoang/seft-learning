@@ -1,0 +1,69 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Class-based dark mode — controlled by JS toggle + system preference fallback */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+/* Manual dark class (JS-applied) */
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+/* System preference fallback when no manual theme is set */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light):not(.dark) {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+/* Heading anchors from rehype-autolink-headings */
+.heading-anchor {
+  text-decoration: none;
+  color: inherit;
+}
+
+.heading-anchor:hover::after {
+  content: " #";
+  opacity: 0.4;
+}
+
+/* rehype-pretty-code: reset so Tailwind prose doesn't double-style */
+[data-rehype-pretty-code-fragment] pre {
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+}
+
+[data-rehype-pretty-code-fragment] code {
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  font-size: 0.875em;
+}
+
+[data-rehype-pretty-code-title] {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1.25rem;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: #94a3b8;
+}
