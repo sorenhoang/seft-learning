@@ -5,7 +5,7 @@ tags: ["AI-Driven", "DecisionMaking", "ProblemSolving", "Leadership", "ProductSt
 description: "A deep dive into why AI Literacy is no longer enough for Senior Engineers. Discover the AI Fluency Framework and the 4Ds of high-impact AI collaboration."
 date: "2026-04-14"
 order: 2
-isDraft: false
+draft: false
 ---
 
 ![Mind Map - Claude Code in Action Summary](https://res.cloudinary.com/dmwr6giop/image/upload/v1776174376/ai-fluency_ydf9ls.png)

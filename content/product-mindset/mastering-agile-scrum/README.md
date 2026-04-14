@@ -5,7 +5,7 @@ tags: ["LeanMethodology", "Agile", "Scrum", "DecisionMaking"]
 description: "An overview of Agile principles and the Scrum framework, focusing on the roles and values that drive successful product development."
 date: "2026-04-12"
 order: 1
-isDraft: false
+draft: false
 ---
 
 ## Introduction
