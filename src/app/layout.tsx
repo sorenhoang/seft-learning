@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "katex/dist/katex.min.css";
 import "./globals.css";
 import Header from "@/components/layout/Header";
+import FooterQuote from "@/components/layout/FooterQuote";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -54,9 +55,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <footer className="border-t border-zinc-100 py-6 dark:border-zinc-800">
-          <p className="text-center text-xs text-zinc-400">
-            &ldquo;An investment in knowledge pays the best interest.&rdquo; — Benjamin Franklin
-          </p>
+          <FooterQuote />
         </footer>
       </body>
     </html>

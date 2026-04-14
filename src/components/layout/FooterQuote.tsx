@@ -1,0 +1,125 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+
+const QUOTES: { text: string; author: string }[] = [
+  { text: "An investment in knowledge pays the best interest.", author: "Benjamin Franklin" },
+  { text: "The more that you read, the more things you will know.", author: "Dr. Seuss" },
+  { text: "Education is the most powerful weapon which you can use to change the world.", author: "Nelson Mandela" },
+  { text: "Live as if you were to die tomorrow. Learn as if you were to live forever.", author: "Mahatma Gandhi" },
+  { text: "The beautiful thing about learning is that no one can take it away from you.", author: "B.B. King" },
+  { text: "Tell me and I forget. Teach me and I remember. Involve me and I learn.", author: "Benjamin Franklin" },
+  { text: "The mind is not a vessel to be filled, but a fire to be kindled.", author: "Plutarch" },
+  { text: "Learning never exhausts the mind.", author: "Leonardo da Vinci" },
+  { text: "In learning you will teach, and in teaching you will learn.", author: "Phil Collins" },
+  { text: "The more I learn, the more I realize how much I don't know.", author: "Albert Einstein" },
+  { text: "Education is not the filling of a pail, but the lighting of a fire.", author: "W.B. Yeats" },
+  { text: "The only person who is educated is the one who has learned how to learn and change.", author: "Carl Rogers" },
+  { text: "Develop a passion for learning. If you do, you will never cease to grow.", author: "Anthony J. D'Angelo" },
+  { text: "The capacity to learn is a gift; the ability to learn is a skill; the willingness to learn is a choice.", author: "Brian Herbert" },
+  { text: "It does not matter how slowly you go as long as you do not stop.", author: "Confucius" },
+  { text: "The expert in anything was once a beginner.", author: "Helen Hayes" },
+  { text: "Anyone who stops learning is old, whether at twenty or eighty.", author: "Henry Ford" },
+  { text: "Wisdom is not a product of schooling but of the lifelong attempt to acquire it.", author: "Albert Einstein" },
+  { text: "Learning is a treasure that will follow its owner everywhere.", author: "Chinese Proverb" },
+  { text: "I am always doing that which I cannot do, in order that I may learn how to do it.", author: "Pablo Picasso" },
+  { text: "You learn something every day if you pay attention.", author: "Ray LeBlond" },
+  { text: "Education is not preparation for life; education is life itself.", author: "John Dewey" },
+  { text: "The illiterate of the 21st century will not be those who cannot read and write, but those who cannot learn, unlearn, and relearn.", author: "Alvin Toffler" },
+  { text: "Intellectual growth should commence at birth and cease only at death.", author: "Albert Einstein" },
+  { text: "Once you stop learning, you start dying.", author: "Albert Einstein" },
+  { text: "A person who never made a mistake never tried anything new.", author: "Albert Einstein" },
+  { text: "You don't understand anything until you learn it more than one way.", author: "Marvin Minsky" },
+  { text: "The whole purpose of education is to turn mirrors into windows.", author: "Sydney J. Harris" },
+  { text: "Learning is not attained by chance; it must be sought for with ardor and diligence.", author: "Abigail Adams" },
+  { text: "What we learn with pleasure we never forget.", author: "Alfred Mercier" },
+  { text: "The secret of getting ahead is getting started.", author: "Mark Twain" },
+  { text: "Every accomplishment starts with the decision to try.", author: "John F. Kennedy" },
+  { text: "You are never too old to set another goal or to dream a new dream.", author: "C.S. Lewis" },
+  { text: "Change is the end result of all true learning.", author: "Leo Buscaglia" },
+  { text: "Knowledge is power.", author: "Francis Bacon" },
+  { text: "To know that you do not know is the beginning of wisdom.", author: "Confucius" },
+  { text: "It always seems impossible until it's done.", author: "Nelson Mandela" },
+  { text: "Great minds discuss ideas; average minds discuss events; small minds discuss people.", author: "Eleanor Roosevelt" },
+  { text: "The journey of a thousand miles begins with one step.", author: "Lao Tzu" },
+  { text: "I have no special talent. I am only passionately curious.", author: "Albert Einstein" },
+  { text: "Learning is the only thing the mind never exhausts, never fears, and never regrets.", author: "Leonardo da Vinci" },
+  { text: "You don't have to be great to start, but you have to start to be great.", author: "Zig Ziglar" },
+  { text: "The man who does not read has no advantage over the man who cannot read.", author: "Mark Twain" },
+  { text: "Reading is to the mind what exercise is to the body.", author: "Joseph Addison" },
+  { text: "Education is the key to unlocking the world, a passport to freedom.", author: "Oprah Winfrey" },
+  { text: "It is not that I'm so smart. It's just that I stay with problems longer.", author: "Albert Einstein" },
+  { text: "Curiosity is the engine of achievement.", author: "Ken Robinson" },
+  { text: "The mind once stretched by a new idea never returns to its original dimensions.", author: "Ralph Waldo Emerson" },
+  { text: "Learning without reflection is a waste; reflection without learning is dangerous.", author: "Confucius" },
+  { text: "We learn more by looking for the answer to a question and not finding it than we do from learning the answer itself.", author: "Lloyd Alexander" },
+  { text: "To teach is to learn twice.", author: "Joseph Joubert" },
+  { text: "All the world is a laboratory to the inquiring mind.", author: "Martin H. Fischer" },
+  { text: "It's what you learn after you know it all that counts.", author: "John Wooden" },
+  { text: "If you think education is expensive, try ignorance.", author: "Derek Bok" },
+  { text: "The only source of knowledge is experience.", author: "Albert Einstein" },
+  { text: "Somewhere, something incredible is waiting to be known.", author: "Carl Sagan" },
+  { text: "Intelligence plus character — that is the goal of true education.", author: "Martin Luther King Jr." },
+  { text: "I am not afraid of storms, for I am learning how to sail my ship.", author: "Louisa May Alcott" },
+  { text: "Mistakes are the portals of discovery.", author: "James Joyce" },
+  { text: "There is no end to education. It is not that you read a book, pass an examination, and finish with education.", author: "Jiddu Krishnamurti" },
+  { text: "Knowing is not enough; we must apply. Willing is not enough; we must do.", author: "Johann Wolfgang von Goethe" },
+  { text: "Wonder is the beginning of wisdom.", author: "Socrates" },
+  { text: "He who learns but does not think is lost. He who thinks but does not learn is in great danger.", author: "Confucius" },
+  { text: "Study without desire spoils the memory, and it retains nothing that it takes in.", author: "Leonardo da Vinci" },
+  { text: "Knowledge is like a garden: if it is not cultivated, it cannot be harvested.", author: "African Proverb" },
+  { text: "Education is not the learning of facts, but the training of the mind to think.", author: "Albert Einstein" },
+  { text: "The roots of education are bitter, but the fruit is sweet.", author: "Aristotle" },
+  { text: "Formal education will make you a living; self-education will make you a fortune.", author: "Jim Rohn" },
+  { text: "Not to know is bad; not to wish to know is worse.", author: "African Proverb" },
+  { text: "Self-education is the only kind of education there is.", author: "Isaac Asimov" },
+  { text: "The whole art of teaching is only the art of awakening the natural curiosity of young minds.", author: "Anatole France" },
+  { text: "The direction in which education starts a man will determine his future in life.", author: "Plato" },
+  { text: "Success is the sum of small efforts, repeated day in and day out.", author: "Robert Collier" },
+  { text: "Strive for progress, not perfection.", author: "Unknown" },
+  { text: "Every day is a school day.", author: "Unknown" },
+  { text: "The goal of education is not to increase the amount of knowledge but to create the possibilities to invent and discover.", author: "Jean Piaget" },
+  { text: "An educated mind is able to entertain a thought without accepting it.", author: "Aristotle" },
+  { text: "Every student can learn, just not on the same day or the same way.", author: "George Evans" },
+  { text: "Children must be taught how to think, not what to think.", author: "Margaret Mead" },
+  { text: "Spoon feeding in the long run teaches us nothing but the shape of the spoon.", author: "E.M. Forster" },
+  { text: "Real learning comes about when the competitive spirit has ceased.", author: "Jiddu Krishnamurti" },
+  { text: "The more you know, the more you realize you know nothing.", author: "Socrates" },
+  { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+  { text: "In the middle of every difficulty lies opportunity.", author: "Albert Einstein" },
+  { text: "Curiosity killed the cat, but satisfaction brought it back — keep asking questions.", author: "Unknown" },
+  { text: "Your mind is a garden. Your thoughts are the seeds. You can grow flowers or you can grow weeds.", author: "Unknown" },
+  { text: "Education breeds confidence. Confidence breeds hope. Hope breeds peace.", author: "Confucius" },
+  { text: "The beautiful thing about knowledge is that it multiplies when shared.", author: "Unknown" },
+  { text: "Never stop learning, because life never stops teaching.", author: "Unknown" },
+  { text: "The more you learn, the more you earn.", author: "Warren Buffett" },
+  { text: "Wear your learning like your watch, in a private pocket.", author: "Lord Chesterfield" },
+  { text: "The wisest mind has something yet to learn.", author: "George Santayana" },
+  { text: "Knowledge is not power. Knowledge is only potential power. Action is power.", author: "Tony Robbins" },
+  { text: "Live out of your imagination, not your history.", author: "Stephen R. Covey" },
+  { text: "Without education, we are in a horrible and deadly danger of taking educated people seriously.", author: "G.K. Chesterton" },
+  { text: "The art of teaching is the art of assisting discovery.", author: "Mark Van Doren" },
+  { text: "What sculpture is to a block of marble, education is to the soul.", author: "Joseph Addison" },
+  { text: "A good teacher can inspire hope, ignite the imagination, and instill a love of learning.", author: "Brad Henry" },
+  { text: "The measure of intelligence is the ability to change.", author: "Albert Einstein" },
+  { text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "Winston Churchill" },
+  { text: "The passion for learning is the most important of all the passions.", author: "Anatole France" },
+];
+
+export default function FooterQuote() {
+  const pathname = usePathname();
+  const [quote, setQuote] = useState<{ text: string; author: string } | null>(null);
+
+  useEffect(() => {
+    setQuote(QUOTES[Math.floor(Math.random() * QUOTES.length)]);
+  }, [pathname]);
+
+  if (!quote) return <p className="h-4" />;
+
+  return (
+    <p className="text-center text-xs text-zinc-400 transition-opacity duration-500">
+      &ldquo;{quote.text}&rdquo; — {quote.author}
+    </p>
+  );
+}
