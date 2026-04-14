@@ -8,7 +8,7 @@ draft: false
 
 # Introduction to Agile Scrum
 
-![Scrum Essentials Blueprint](/images/product-mindset/mastering-agile-scrum/scrum-essentials-blueprint.png)
+![Scrum Essentials Blueprint](https://res.cloudinary.com/dmwr6giop/image/upload/f_auto,q_auto/v1776139076/scrum-essentials-blueprint_e5owub.png)
 
 Agile Scrum is a lightweight framework for building products through short, iterative cycles. Instead of trying to define everything upfront, teams work in small increments, gather feedback early, and continuously improve both the product and the way they collaborate.
 

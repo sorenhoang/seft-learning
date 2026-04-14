@@ -6,15 +6,16 @@ Personal knowledge base — technical notes, product thinking, design principles
 
 All content lives in the `/content/` folder. The site rebuilds automatically on every `git push` — no CMS, no API, just Markdown files.
 
-### Content types
+### Content terminology
 
-There are three types of content:
-
-| Type | Structure | URL |
+| Term | What it is | Example URL |
 |---|---|---|
-| **Category** | A folder with `README.md` | `/technical` |
-| **Series** | A subfolder inside a category | `/technical/system-design` |
-| **Post** | A single `.md` file inside a category | `/technical/docker-tips` |
+| **category** | A top-level folder with a `README.md` | `/technical` |
+| **series** | A subfolder inside a category — contains chapters | `/technical/system-design-fundamentals` |
+| **chapter** | A single `.md` file inside a series | `/technical/system-design-fundamentals/01-introduction` |
+| **post** | A standalone `.md` file directly inside a category | `/technical/docker-essentials` |
+
+The full hierarchy: `category → series → chapter` and `category → post`.
 
 ---
 
@@ -114,19 +115,26 @@ Chapter content here...
 
 ### Adding images
 
-Put images in `public/images/` and reference them in Markdown:
+All images are hosted on **Cloudinary** — do not commit image files to this repo.
 
+**Steps:**
+1. Upload your image to [Cloudinary](https://cloudinary.com) (account: `dmwr6giop`)
+2. Copy the uploaded URL and insert `f_auto,q_auto` into the path before the version segment
+3. Paste it into your Markdown
+
+**URL format:**
 ```
-public/
-  images/
-    technical/
-      my-post/
-        diagram.png
+https://res.cloudinary.com/dmwr6giop/image/upload/f_auto,q_auto/{version}/{filename}
 ```
 
+**Example:**
 ```markdown
-![Diagram description](/images/technical/my-post/diagram.png)
+![Diagram description](https://res.cloudinary.com/dmwr6giop/image/upload/f_auto,q_auto/v1234567890/my-diagram_abc123.png)
 ```
+
+> `f_auto` — delivers WebP or AVIF automatically based on the browser.  
+> `q_auto` — compresses to optimal quality without visible loss.  
+> Never use local paths like `/images/...` — they will not work.
 
 ---
 
