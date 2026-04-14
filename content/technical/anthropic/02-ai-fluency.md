@@ -70,9 +70,3 @@ As a Product Builder, **you are the bottleneck of quality.** If an AI-generated 
 The future belongs to those who view generative AI as a **socio-technical system**. It is a blend of human creativity, ethical responsibility, and machine efficiency.
 
 By moving from Literacy to Fluency, you stop being a "user" of technology and start being an **architect of intelligence.** You don't just build apps; you build intelligent systems that solve real-world problems with unprecedented speed and safety.
-
----
-**What’s Next?**
-In Chapter 4, we will take these theoretical "4Ds" and apply them directly to a real-world coding project using Claude Code. We’ll see how **Delegation** and **Discernment** play out in a live terminal session.
-
-*Stay fluent, keep building.*
