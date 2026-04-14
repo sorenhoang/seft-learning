@@ -50,7 +50,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="flex min-h-full flex-col bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
+      <body suppressHydrationWarning className="flex min-h-full flex-col bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
         <Header />
         <main className="flex-1">{children}</main>
         <footer className="border-t border-zinc-100 py-6 dark:border-zinc-800">
