@@ -13,6 +13,23 @@ npm run start    # Serve production build locally
 
 The build is the primary way to catch errors — it runs TypeScript strict mode and generates all 40+ static pages via `generateStaticParams`.
 
+## Content terminology
+
+Use these terms consistently — in code, comments, commit messages, and conversations:
+
+| Term | What it is | Example |
+|---|---|---|
+| **category** | A top-level folder in `content/` with a `README.md` | `technical/`, `product-mindset/` |
+| **series** | A subfolder inside a category — a multi-chapter series | `technical/system-design-fundamentals/` |
+| **chapter** | A single `.md` file inside a series | `01-introduction.md` |
+| **post** | A standalone `.md` file directly inside a category | `technical/docker-essentials.md` |
+
+The full hierarchy: `category → series → chapter` and `category → post`.
+
+> Never call a series a "book", "guide", or "course". Never call a chapter an "article" or "page".
+
+---
+
 ## Architecture
 
 ### Content ↔ Code in the same repo
@@ -23,15 +40,15 @@ All Markdown lives in `/content/`, read at **build time** via Node.js `fs` — n
 content/
   {category}/
     README.md                  ← category metadata (title, description)
-    {book}/
-      README.md                ← book metadata + overview body
+    {series}/
+      README.md                ← series metadata + overview body
       01-chapter-slug.md       ← chapter (order field controls sidebar sort)
     {post-slug}.md             ← standalone post
 ```
 
 ### How a URL maps to content
 
-`resolveSlugType(category, slug)` in `src/lib/content.ts` checks the filesystem to decide whether a slug is a **book** (directory) or **post** (`.md` file). This is what `[category]/[slug]/page.tsx` uses to branch its rendering.
+`resolveSlugType(category, slug)` in `src/lib/content.ts` checks the filesystem to decide whether a slug is a **series** (directory) or **post** (`.md` file). This is what `[category]/[slug]/page.tsx` uses to branch its rendering.
 
 ```
 /                              → src/app/page.tsx
@@ -45,9 +62,9 @@ content/
 
 ### Core data layer (`src/lib/content.ts`)
 
-- `buildContentTree()` — reads all categories/books/posts from `content/`, returns typed tree. Called in every page's Server Component.
-- `buildSearchIndex(tree)` — flattens tree to `SearchEntry[]`. Books return book URL even if a chapter matched; posts return post URL.
-- `resolveSlugType(category, slug)` — `"book" | "post" | null`, used to branch `[slug]/page.tsx`.
+- `buildContentTree()` — reads all categories/series/posts from `content/`, returns typed tree. Called in every page's Server Component.
+- `buildSearchIndex(tree)` — flattens tree to `SearchEntry[]`. Seriess return series URL even if a chapter matched; posts return post URL.
+- `resolveSlugType(category, slug)` — `"series" | "post" | null`, used to branch `[slug]/page.tsx`.
 - `draft: true` in frontmatter hides content **in production only** (`NODE_ENV === "production"`). Drafts are visible in dev.
 
 ### Markdown pipeline (`src/lib/markdown.ts`)
@@ -73,12 +90,12 @@ Client-side via Fuse.js. The index is a static Route Handler at `/api/search-ind
 | Field | Where | Notes |
 |---|---|---|
 | `title` | all | required |
-| `description` | category/book README, post | |
-| `tags` | book README, post, chapter | drives tag pages + search filter |
+| `description` | category/series README, post | |
+| `tags` | series README, post, chapter | drives tag pages + search filter |
 | `order` | chapter only | integer, controls sidebar sort |
-| `date` | book README, post, chapter | `YYYY-MM-DD` |
-| `draft` | book README, post, chapter | hidden in production |
-| `cover` | book README, post | declared in types, not yet rendered |
+| `date` | series README, post, chapter | `YYYY-MM-DD` |
+| `draft` | series README, post, chapter | hidden in production |
+| `cover` | series README, post | declared in types, not yet rendered |
 
 ### Key constraints
 
@@ -88,7 +105,8 @@ Client-side via Fuse.js. The index is a static Route Handler at `/api/search-ind
 
 ## Workflow conventions
 
-- **Adding new content**: whenever a new chapter, post, or book is created, ask the user whether they want to add an `AudioPlayer` to it before finishing.
+- **Adding new content**: whenever a new **chapter** or **post** is created, ask the user whether they want to add an `AudioPlayer` to it before finishing. `AudioPlayer` must NOT be added to series metadata (`series/README.md`) or category metadata (`category/README.md`).
+- **Images**: all images are hosted on Cloudinary (cloud name: `dmwr6giop`). Never reference local paths like `/images/...`. Always use the Cloudinary URL format with `f_auto,q_auto` transformations: `https://res.cloudinary.com/dmwr6giop/image/upload/f_auto,q_auto/{version}/{filename}`. If a contributor mentions adding an image, remind them to upload to Cloudinary first.
 
 ## Environment variables
 
