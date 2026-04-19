@@ -11,6 +11,7 @@ import { markdownToHtml, extractToc } from "@/lib/markdown";
 import { formatDate } from "@/lib/date";
 import MarkdownRenderer from "@/components/content/MarkdownRenderer";
 import TableOfContents from "@/components/content/TableOfContents";
+import AudioPlayer from "@/components/content/AudioPlayer";
 
 interface PageProps {
   params: Promise<{ category: string; slug: string }>;
@@ -220,6 +221,7 @@ export default async function SlugPage({ params }: PageProps) {
             </div>
           </header>
 
+          <AudioPlayer content={content} />
           <MarkdownRenderer html={html} />
         </article>
 
