@@ -106,6 +106,7 @@ Client-side via Fuse.js. The index is a static Route Handler at `/api/search-ind
 ## Workflow conventions
 
 - **Adding new content**: whenever a new **chapter** or **post** is created, ask the user whether they want to add an `AudioPlayer` to it before finishing. `AudioPlayer` must NOT be added to series metadata (`series/README.md`) or category metadata (`category/README.md`).
+- **Blog post length**: standalone posts should be concise — aim for **100–250 lines** of markdown. Cut redundant sections, merge related points, and avoid over-explaining concepts the audience already understands. Tighter is better.
 - **Images**: all images are hosted on Cloudinary (cloud name: `dmwr6giop`). Never reference local paths like `/images/...`. Always use the Cloudinary URL format with `f_auto,q_auto` transformations: `https://res.cloudinary.com/dmwr6giop/image/upload/f_auto,q_auto/{version}/{filename}`. If a contributor mentions adding an image, remind them to upload to Cloudinary first.
 
 ## Environment variables
