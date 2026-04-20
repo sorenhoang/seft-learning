@@ -102,8 +102,7 @@ export default async function SlugPage({ params }: PageProps) {
                 <img
                   src={book.cover}
                   alt={book.title}
-                  className="mb-6 w-full rounded-xl object-cover"
-                  style={{ maxHeight: "360px" }}
+                  className="mb-6 w-full rounded-xl object-contain"
                 />
               )}
               <h1 className="mb-2 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
