@@ -94,8 +94,7 @@ export default async function ChapterPage({ params }: PageProps) {
               <img
                 src={frontmatter.cover as string}
                 alt={currentChapter.title}
-                className="mb-6 w-full rounded-xl object-cover"
-                style={{ maxHeight: "360px" }}
+                className="mb-6 w-full rounded-xl object-contain"
               />
             )}
             <p className="mb-1 text-sm font-medium text-zinc-400">
