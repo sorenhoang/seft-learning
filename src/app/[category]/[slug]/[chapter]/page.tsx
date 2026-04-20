@@ -66,7 +66,7 @@ export default async function ChapterPage({ params }: PageProps) {
   const toc = extractToc(content);
 
   return (
-    <div className="mx-auto max-w-7xl px-4 pb-24 pt-10 sm:px-6 lg:pb-10">
+    <div className="mx-auto max-w-screen-2xl px-4 pb-24 pt-10 sm:px-6 lg:pb-10">
       {/* Breadcrumb */}
       <nav className="mb-8 flex items-center gap-2 text-sm text-zinc-400">
         <Link href="/" className="hover:text-zinc-600 dark:hover:text-zinc-200">Home</Link>

@@ -12,7 +12,7 @@ export default function Sidebar({ book }: SidebarProps) {
   const pathname = usePathname();
 
   return (
-    <aside className="hidden w-64 shrink-0 lg:block">
+    <aside className="hidden w-64 shrink-0 lg:block 2xl:w-72">
       <div className="sticky top-20 max-h-[calc(100vh-5rem)] overflow-y-auto pr-4">
         {/* Book title */}
         <Link

@@ -82,7 +82,7 @@ export default async function SlugPage({ params }: PageProps) {
     const firstChapter = book.chapters[0];
 
     return (
-      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+      <div className="mx-auto max-w-screen-2xl px-4 py-10 sm:px-6">
         {/* Breadcrumb */}
         <nav className="mb-8 flex items-center gap-2 text-sm text-zinc-400">
           <Link href="/" className="hover:text-zinc-600 dark:hover:text-zinc-200">Home</Link>
@@ -186,7 +186,7 @@ export default async function SlugPage({ params }: PageProps) {
   const toc = extractToc(content);
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+    <div className="mx-auto max-w-screen-2xl px-4 py-10 sm:px-6">
       {/* Breadcrumb */}
       <nav className="mb-8 flex items-center gap-2 text-sm text-zinc-400">
         <Link href="/" className="hover:text-zinc-600 dark:hover:text-zinc-200">Home</Link>

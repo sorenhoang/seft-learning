@@ -33,7 +33,7 @@ export default function TableOfContents({ toc }: TableOfContentsProps) {
   if (toc.length === 0) return null;
 
   return (
-    <aside className="w-48 shrink-0">
+    <aside className="w-48 shrink-0 2xl:w-64">
       <div className="sticky top-20">
         <p className="mb-3 text-xs font-medium uppercase tracking-wide text-zinc-400">
           On this page
