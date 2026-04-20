@@ -90,6 +90,14 @@ export default async function ChapterPage({ params }: PageProps) {
         {/* Main content */}
         <article className="min-w-0 flex-1">
           <header className="mb-8">
+            {(frontmatter.cover as string | undefined) && (
+              <img
+                src={frontmatter.cover as string}
+                alt={currentChapter.title}
+                className="mb-6 w-full rounded-xl object-cover"
+                style={{ maxHeight: "360px" }}
+              />
+            )}
             <p className="mb-1 text-sm font-medium text-zinc-400">
               Chapter {currentChapter.order}
             </p>
