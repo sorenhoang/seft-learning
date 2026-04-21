@@ -66,7 +66,7 @@ export default async function ChapterPage({ params }: PageProps) {
   const toc = extractToc(content);
 
   return (
-    <div className="mx-auto max-w-7xl px-4 pb-24 pt-10 sm:px-6 lg:pb-10">
+    <div className="mx-auto max-w-screen-2xl px-4 pb-24 pt-10 sm:px-6 lg:pb-10">
       {/* Breadcrumb */}
       <nav className="mb-8 flex items-center gap-2 text-sm text-zinc-400">
         <Link href="/" className="hover:text-zinc-600 dark:hover:text-zinc-200">Home</Link>
@@ -90,6 +90,13 @@ export default async function ChapterPage({ params }: PageProps) {
         {/* Main content */}
         <article className="min-w-0 flex-1">
           <header className="mb-8">
+            {(frontmatter.cover as string | undefined) && (
+              <img
+                src={frontmatter.cover as string}
+                alt={currentChapter.title}
+                className="mb-6 w-full rounded-xl object-contain"
+              />
+            )}
             <p className="mb-1 text-sm font-medium text-zinc-400">
               Chapter {currentChapter.order}
             </p>

@@ -41,15 +41,22 @@ export async function markdownToHtml(content: string): Promise<string> {
 export function extractToc(content: string): TocEntry[] {
   const headingRegex = /^(#{1,6})\s+(.+)$/gm;
   const toc: TocEntry[] = [];
+  const seenIds = new Map<string, number>();
   let match;
 
   while ((match = headingRegex.exec(content)) !== null) {
     const level = match[1].length;
     const text = match[2].replace(/[*_`[\]]/g, "").trim();
-    const id = text
+    const baseId = text
       .toLowerCase()
       .replace(/\s+/g, "-")
       .replace(/[^\w-]/g, "");
+
+    // Deduplicate ids the same way rehype-slug does
+    const count = seenIds.get(baseId) ?? 0;
+    const id = count === 0 ? baseId : `${baseId}-${count}`;
+    seenIds.set(baseId, count + 1);
+
     toc.push({ id, text, level });
   }
 

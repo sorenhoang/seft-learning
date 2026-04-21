@@ -11,6 +11,7 @@ import { markdownToHtml, extractToc } from "@/lib/markdown";
 import { formatDate } from "@/lib/date";
 import MarkdownRenderer from "@/components/content/MarkdownRenderer";
 import TableOfContents from "@/components/content/TableOfContents";
+import AudioPlayer from "@/components/content/AudioPlayer";
 
 interface PageProps {
   params: Promise<{ category: string; slug: string }>;
@@ -82,7 +83,7 @@ export default async function SlugPage({ params }: PageProps) {
     const firstChapter = book.chapters[0];
 
     return (
-      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+      <div className="mx-auto max-w-screen-2xl px-4 py-10 sm:px-6">
         {/* Breadcrumb */}
         <nav className="mb-8 flex items-center gap-2 text-sm text-zinc-400">
           <Link href="/" className="hover:text-zinc-600 dark:hover:text-zinc-200">Home</Link>
@@ -98,6 +99,13 @@ export default async function SlugPage({ params }: PageProps) {
           {/* Main content */}
           <div className="min-w-0 flex-1">
             <div className="mb-6">
+              {book.cover && (
+                <img
+                  src={book.cover}
+                  alt={book.title}
+                  className="mb-6 w-full rounded-xl object-contain"
+                />
+              )}
               <h1 className="mb-2 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
                 {book.title}
               </h1>
@@ -178,7 +186,7 @@ export default async function SlugPage({ params }: PageProps) {
   const toc = extractToc(content);
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+    <div className="mx-auto max-w-screen-2xl px-4 py-10 sm:px-6">
       {/* Breadcrumb */}
       <nav className="mb-8 flex items-center gap-2 text-sm text-zinc-400">
         <Link href="/" className="hover:text-zinc-600 dark:hover:text-zinc-200">Home</Link>
@@ -220,6 +228,7 @@ export default async function SlugPage({ params }: PageProps) {
             </div>
           </header>
 
+          <AudioPlayer content={content} />
           <MarkdownRenderer html={html} />
         </article>
 
