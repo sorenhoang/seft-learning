@@ -1,7 +1,7 @@
 ---
 title: "Auth in Depth: From Passwords to Zero Trust"
 description: "A complete 16-chapter journey from authentication fundamentals to zero trust architecture — covering JWT, OAuth 2.0, OIDC, RBAC, ABAC, MFA, and real-world security patterns."
-tags: ["Security", "Authentication", "Authorization", "OAuth2", "JWT", "ZeroTrust", "SystemDesign"]
+tags: ["security", "authentication", "authorization", "oauth2", "jwt", "zero-trust", "system-design"]
 date: "2026-04-16"
 draft: false
 ---

@@ -1,12 +1,10 @@
 ---
 title: "Learning in Public: Benefits and Risks"
 description: "Why sharing what you learn publicly is the fastest way to grow as an engineer — and the real risks to watch out for."
-tags: ["Soft Skills", "Career Growth", "Communication", "Learning"]
+tags: ["soft-skills", "career-growth", "communication", "learning"]
 date: "2026-04-19"
 draft: false
 ---
-
-# Learning in Public: Benefits and Risks
 
 Most engineers learn in private. They read docs, watch courses, take notes in a personal Notion — and none of it leaves their laptop. Learning in public means flipping that: you document what you learn and share it openly as you go.
 

@@ -1,12 +1,10 @@
 ---
 title: "Test-Driven Development: Writing Tests Before Code"
 description: "A comprehensive guide to TDD — from the Red-Green-Refactor cycle and the Three Laws to practical patterns, anti-patterns, and real-world workflows across backend, frontend, and legacy systems."
-tags: ["TDD", "Testing", "Software Engineering", "Clean Code", "Refactoring"]
+tags: ["tdd", "testing", "software-engineering", "clean-code", "refactoring"]
 date: "2026-04-19"
 draft: false
 ---
-
-# Test-Driven Development: Writing Tests Before Code
 
 Test-Driven Development (TDD) is a software development methodology where you write a failing automated test *before* writing the production code that makes it pass. It inverts the conventional "write code, then test" into "write test, then code, then clean up."
 

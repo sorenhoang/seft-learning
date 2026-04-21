@@ -1,12 +1,10 @@
 ---
 title: "Imposter Syndrome at the Senior Level — It's Still There and How to Face It"
 description: "Why imposter syndrome gets worse with seniority, not better — and practical strategies for senior engineers, tech leads, and staff+ engineers who still feel like frauds despite years of experience."
-tags: ["Soft Skills", "Career Growth", "Mental Health", "Leadership", "Senior Engineer"]
+tags: ["soft-skills", "career-growth", "mental-health", "leadership", "senior-engineer"]
 date: "2026-04-19"
 draft: false
 ---
-
-# Imposter Syndrome at the Senior Level — It's Still There and How to Face It
 
 You have "Senior" or "Staff" in your title. You lead architecture discussions, mentor junior engineers, and make decisions that affect production systems serving millions of users.
 

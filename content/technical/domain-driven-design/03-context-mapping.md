@@ -1,7 +1,6 @@
 ---
 title: "Context Mapping — How Bounded Contexts Collaborate"
-tags: ["DDD", "SystemDesign", "SoftwareArchitecture", "Microservices", "Integration"]
-description: "Learn the eight context mapping patterns that define how bounded contexts integrate — from Anti-Corruption Layers to Shared Kernels — and when to apply each one."
+tags: ["ddd", "system-design", "software-architecture", "microservices", "integration"]
 date: "2026-04-20"
 order: 3
 cover: "https://res.cloudinary.com/dmwr6giop/image/upload/q_auto/f_auto/v1776652900/ddd-ch3-context-mapping_dbu1r3.png"

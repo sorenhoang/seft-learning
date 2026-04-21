@@ -1,12 +1,10 @@
 ---
 title: "How to Build Trust in a New Team"
 description: "A practical guide for engineers joining a new team — from the Trust Equation and first-30-days tactics to communication patterns, technical trust builders, and the mistakes that destroy credibility."
-tags: ["Soft Skills", "Teamwork", "Communication", "Career Growth", "Leadership"]
+tags: ["soft-skills", "teamwork", "communication", "career-growth", "leadership"]
 date: "2026-04-19"
 draft: false
 ---
-
-# How to Build Trust in a New Team
 
 You just joined a new team. Fresh laptop, blank Slack sidebar, a codebase you have never seen. Everyone seems to know what they are doing. You do not.
 

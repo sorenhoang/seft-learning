@@ -1,7 +1,6 @@
 ---
 title: "Rate Limiting, Brute Force Protection & Account Lockout"
-tags: ["Security", "RateLimiting", "BruteForce", "API-Design", "SystemDesign", "Backend"]
-description: "A deep dive into rate limiting algorithms, brute force defense strategies, account lockout mechanisms, and distributed system considerations for production auth systems."
+tags: ["security", "rate-limiting", "brute-force", "api-design", "system-design", "backend"]
 date: "2026-05-14"
 order: 15
 draft: false

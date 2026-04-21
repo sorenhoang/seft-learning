@@ -1,7 +1,6 @@
 ---
 title: "MFA / 2FA — Adding a Layer of Protection Beyond Passwords"
-tags: ["Security", "MFA", "2FA", "Authentication", "ZeroTrust"]
-description: "A comprehensive look at multi-factor authentication: definitions, factor types, common methods, real-world attack vectors, and phishing-resistant best practices."
+tags: ["security", "mfa", "2fa", "authentication", "zero-trust"]
 date: "2026-05-04"
 order: 10
 draft: false

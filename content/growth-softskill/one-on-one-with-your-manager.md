@@ -1,12 +1,10 @@
 ---
 title: "1:1 with Your Manager: Templates and Questions I Use"
 description: "A practical playbook for making your 1:1s actually useful — with a repeatable template, categorized questions, and tips for bringing up hard topics like compensation and burnout."
-tags: ["Soft Skills", "Career Growth", "Communication", "Leadership"]
+tags: ["soft-skills", "career-growth", "communication", "leadership"]
 date: "2026-04-19"
 draft: false
 ---
-
-# 1:1 with Your Manager: Templates and Questions I Use
 
 Your 1:1 is the one recurring meeting where you can talk about things that do not belong in standups, retros, or project syncs — career growth, feedback, frustrations, and the stuff you cannot say in a group setting.
 

@@ -1,7 +1,6 @@
 ---
 title: "DDD in Practice — Hexagonal Architecture, Clean Architecture & CQRS"
-tags: ["DDD", "SystemDesign", "SoftwareArchitecture", "CleanArchitecture", "CQRS", "HexagonalArchitecture", "Backend"]
-description: "Bring DDD to life by combining it with Hexagonal Architecture, Clean Architecture, and CQRS — the proven structural patterns that make DDD applications maintainable, testable, and evolvable."
+tags: ["ddd", "system-design", "software-architecture", "clean-architecture", "cqrs", "hexagonal-architecture", "backend"]
 date: "2026-04-20"
 order: 6
 cover: "https://res.cloudinary.com/dmwr6giop/image/upload/q_auto/f_auto/v1776653166/ddd-ch6-architecture_mwjjsj.png"

@@ -1,7 +1,6 @@
 ---
 title: "Social Login & SSO — One Account, Login Everywhere"
-tags: ["Security", "SSO", "OAuth2", "OIDC", "SAML", "Authentication"]
-description: "How Social Login and Enterprise SSO work, their underlying protocols, key trade-offs, and architectural best practices for consumer and workforce identity."
+tags: ["security", "sso", "oauth2", "oidc", "saml", "authentication"]
 date: "2026-04-30"
 order: 8
 draft: false

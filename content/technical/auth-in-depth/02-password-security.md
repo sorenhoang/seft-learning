@@ -1,7 +1,6 @@
 ---
 title: "Password Security — Beyond the Character Rules"
-tags: ["Security", "Cryptography", "UX", "ProductStrategy"]
-description: "Why complex passwords fail and how modern standards like Argon2id, Passphrases, and MFA are reshaping digital identity."
+tags: ["security", "cryptography", "ux", "product-strategy"]
 date: "2026-04-18"
 order: 2
 draft: false

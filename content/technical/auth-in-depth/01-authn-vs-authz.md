@@ -1,7 +1,6 @@
 ---
 title: "Authentication vs. Authorization — The Twin Pillars of Security"
-tags: ["Security", "SystemDesign", "WebDev", "ZeroTrust"]
-description: "A deep dive into the fundamental differences between AuthN and AuthZ, their protocols (OIDC vs OAuth2), and how to architect them in modern microservices."
+tags: ["security", "system-design", "web-dev", "zero-trust"]
 date: "2026-04-16"
 order: 1
 draft: false

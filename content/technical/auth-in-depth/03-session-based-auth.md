@@ -1,7 +1,6 @@
 ---
 title: "Session-Based Authentication — The Power of State"
-tags: ["Security", "SystemDesign", "Backend", "WebArchitecture"]
-description: "A deep dive into stateful authentication: How sessions work, the challenge of scaling, and why real-time revocation makes them a top choice for high-security products."
+tags: ["security", "system-design", "backend", "web-architecture"]
 date: "2026-04-20"
 order: 3
 draft: false

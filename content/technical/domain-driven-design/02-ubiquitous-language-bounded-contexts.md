@@ -1,7 +1,6 @@
 ---
 title: "Ubiquitous Language & Bounded Contexts — One Language, Many Worlds"
-tags: ["DDD", "SystemDesign", "SoftwareArchitecture", "Microservices"]
-description: "Master the two most foundational concepts in strategic DDD: building a shared vocabulary that becomes your code, and drawing explicit boundaries where that vocabulary applies."
+tags: ["ddd", "system-design", "software-architecture", "microservices"]
 date: "2026-04-20"
 order: 2
 cover: "https://res.cloudinary.com/dmwr6giop/image/upload/q_auto/f_auto/v1776652900/ddd-ch2-bounded-contexts_hfktw7.png"

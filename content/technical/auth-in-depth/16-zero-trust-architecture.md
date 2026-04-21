@@ -1,7 +1,6 @@
 ---
 title: "Zero Trust Architecture — Trust Nobody, Verify Everything"
-tags: ["Security", "ZeroTrust", "SystemDesign", "Authorization", "Architecture"]
-description: "A comprehensive guide to Zero Trust Architecture: its seven tenets, logical components, trust algorithms, deployment models, migration strategy, and real-world threats."
+tags: ["security", "zero-trust", "system-design", "authorization", "architecture"]
 date: "2026-05-16"
 order: 16
 draft: false

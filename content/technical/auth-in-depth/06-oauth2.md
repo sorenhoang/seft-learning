@@ -1,7 +1,6 @@
 ---
 title: "OAuth 2.0 — Delegating Access to Third Parties the Right Way"
-tags: ["Security", "OAuth2", "API-Design", "SystemDesign", "BestPractices"]
-description: "A comprehensive guide to OAuth 2.0: roles, grant types, modern security enhancements like PKCE and DPoP, and the common vulnerabilities every engineer must know."
+tags: ["security", "oauth2", "api-design", "system-design", "best-practices"]
 date: "2026-04-26"
 order: 6
 draft: false

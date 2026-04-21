@@ -1,12 +1,10 @@
 ---
 title: "Working with Difficult People: 3 Case Studies"
 description: "Three realistic scenarios engineers face — the brilliant jerk, the credit taker, and the code review gatekeeper — with specific strategies for each."
-tags: ["Soft Skills", "Teamwork", "Communication", "Career Growth"]
+tags: ["soft-skills", "teamwork", "communication", "career-growth"]
 date: "2026-04-19"
 draft: false
 ---
-
-# Working with Difficult People: 3 Case Studies
 
 Difficult people are rarely acting from malice. They are usually acting from insecurity, fear, or misaligned incentives. Understanding the motivation changes your strategy from confrontation to redirection.
 

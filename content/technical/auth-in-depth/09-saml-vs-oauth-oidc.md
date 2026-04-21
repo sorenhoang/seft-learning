@@ -1,7 +1,6 @@
 ---
 title: "SAML vs OAuth/OIDC — When to Use What in Enterprise"
-tags: ["Security", "SAML", "OAuth2", "OIDC", "Authentication", "Enterprise"]
-description: "A clear breakdown of SAML, OAuth 2.0, and OIDC — their architectures, strengths, weaknesses, and the right context for each in modern and enterprise systems."
+tags: ["security", "saml", "oauth2", "oidc", "authentication", "enterprise"]
 date: "2026-05-02"
 order: 9
 draft: false

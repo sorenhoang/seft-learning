@@ -1,7 +1,6 @@
 ---
 title: "ABAC & ReBAC — Attribute and Relationship-Based Access Control"
-tags: ["Security", "Authorization", "ABAC", "ReBAC", "AccessControl", "Zanzibar"]
-description: "A comprehensive guide to ABAC and ReBAC: how each model works, their architectures, trade-offs, and when to combine them for fine-grained authorization at scale."
+tags: ["security", "authorization", "abac", "rebac", "access-control", "zanzibar"]
 date: "2026-05-08"
 order: 12
 draft: false

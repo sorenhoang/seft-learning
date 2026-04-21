@@ -1,7 +1,6 @@
 ---
 title: "Auth Security Pitfalls — CSRF, XSS, Token Leaking, and How to Prevent Them"
-tags: ["Security", "OAuth2", "JWT", "CSRF", "XSS", "Vulnerabilities", "Authentication"]
-description: "A comprehensive breakdown of the most critical auth security pitfalls: OAuth misconfigurations, JWT vulnerabilities, MFA bypass techniques, authorization flaws, and race conditions."
+tags: ["security", "oauth2", "jwt", "csrf", "xss", "vulnerabilities", "authentication"]
 date: "2026-05-12"
 order: 14
 draft: false

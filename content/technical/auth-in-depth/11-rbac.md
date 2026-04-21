@@ -1,7 +1,6 @@
 ---
 title: "RBAC — Role-Based Access Control"
-tags: ["Security", "Authorization", "RBAC", "AccessControl", "SystemDesign"]
-description: "A deep dive into Role-Based Access Control: the four NIST models, core components, key benefits, implementation architecture, and how it compares to ABAC."
+tags: ["security", "authorization", "rbac", "access-control", "system-design"]
 date: "2026-05-06"
 order: 11
 draft: false

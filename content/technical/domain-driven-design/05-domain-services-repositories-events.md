@@ -1,7 +1,6 @@
 ---
 title: "Domain Services, Repositories, and Domain Events"
-tags: ["DDD", "SystemDesign", "SoftwareArchitecture", "Backend", "EventDriven"]
-description: "Complete the DDD tactical toolkit: learn how Domain Services handle cross-aggregate logic, Repositories abstract persistence, and Domain Events coordinate changes across boundaries."
+tags: ["ddd", "system-design", "software-architecture", "backend", "event-driven"]
 date: "2026-04-20"
 order: 5
 cover: "https://res.cloudinary.com/dmwr6giop/image/upload/q_auto/f_auto/v1776652902/ddd-ch5-services-repositories-events_qm3sde.png"

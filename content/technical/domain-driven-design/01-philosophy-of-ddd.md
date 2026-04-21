@@ -1,7 +1,6 @@
 ---
 title: "The Philosophy of DDD — Why Complexity Kills and How Domain Modeling Fights Back"
-tags: ["DDD", "SystemDesign", "SoftwareArchitecture", "Backend"]
-description: "Understand what Domain-Driven Design actually is, the problem it solves, why complexity is the silent killer of software projects, and the core mental model shift it demands."
+tags: ["ddd", "system-design", "software-architecture", "backend"]
 date: "2026-04-20"
 order: 1
 cover: "https://res.cloudinary.com/dmwr6giop/image/upload/q_auto/f_auto/v1776652902/ddd-ch1-philosophy_rmj79g.png"

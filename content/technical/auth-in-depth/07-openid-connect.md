@@ -1,7 +1,6 @@
 ---
 title: "OpenID Connect — The Identity Layer on Top of OAuth 2.0"
-tags: ["Security", "OIDC", "OAuth2", "Authentication", "SystemDesign"]
-description: "How OpenID Connect extends OAuth 2.0 to solve identity — ID tokens, claims, authentication flows, and advanced features like discovery and session management."
+tags: ["security", "oidc", "oauth2", "authentication", "system-design"]
 date: "2026-04-28"
 order: 7
 draft: false

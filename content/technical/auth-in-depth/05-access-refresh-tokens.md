@@ -1,7 +1,6 @@
 ---
 title: "Access & Refresh Tokens — Balancing UX and Security"
-tags: ["Security", "JWT", "WebDev", "SystemDesign", "BestPractices"]
-description: "Deep dive into token lifecycles, secure storage patterns, and the critical role of Refresh Token Rotation in protecting Single Page Applications."
+tags: ["security", "jwt", "web-dev", "system-design", "best-practices"]
 date: "2026-04-24"
 order: 5
 draft: false

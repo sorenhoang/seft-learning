@@ -1,7 +1,6 @@
 ---
 title: "JWT & Token-Based Auth — Scaling with Statelessness"
-tags: ["Security", "JWT", "API-Design", "SystemDesign"]
-description: "Mastering the art of stateless authentication. Understand JWT structure, the Access/Refresh token pattern, and why revoking a JWT is a Product Builder's biggest challenge."
+tags: ["security", "jwt", "api-design", "system-design"]
 date: "2026-04-22"
 order: 4
 draft: false

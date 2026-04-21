@@ -1,7 +1,6 @@
 ---
 title: "Policy Engines (OPA, Casbin, Cedar) — Decoupling Authorization Logic from Your Code"
-tags: ["Security", "Authorization", "OPA", "Cedar", "Casbin", "PolicyAsCode", "SystemDesign"]
-description: "A practical guide to policy engines: how OPA, Cedar, and Casbin work, their trade-offs, and how to choose the right one for your authorization architecture."
+tags: ["security", "authorization", "opa", "cedar", "casbin", "policy-as-code", "system-design"]
 date: "2026-05-10"
 order: 13
 draft: false

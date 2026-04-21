@@ -1,12 +1,10 @@
 ---
 title: "When a Junior Is Better Than You at Something: A Lesson About Ego"
 description: "What happens when someone with two years of experience outperforms you in a specific area — and what it teaches about seniority, identity, and growth."
-tags: ["Soft Skills", "Career Growth", "Leadership", "Senior Engineer"]
+tags: ["soft-skills", "career-growth", "leadership", "senior-engineer"]
 date: "2026-04-19"
 draft: false
 ---
-
-# When a Junior Is Better Than You at Something: A Lesson About Ego
 
 It will happen. A junior builds a React component with server components and Suspense faster than you can, because they learned React post-hooks — they never had to unlearn class components. A new hire spots a race condition in *your* PR. Someone with two years of experience writes cleaner TypeScript generics because they learned TypeScript first, while you bolted types onto JavaScript years later.
 

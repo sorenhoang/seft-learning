@@ -1,7 +1,7 @@
 ---
 title: "Domain-Driven Design: Building Software That Speaks Business"
 description: "A 6-chapter journey from DDD philosophy through strategic design, tactical building blocks, and real-world architecture — the definitive guide to modeling complex domains."
-tags: ["DDD", "SystemDesign", "SoftwareArchitecture", "CleanArchitecture", "Microservices", "Backend"]
+tags: ["ddd", "system-design", "software-architecture", "clean-architecture", "microservices", "backend"]
 date: "2026-04-20"
 cover: "https://res.cloudinary.com/dmwr6giop/image/upload/q_auto/f_auto/v1776652906/ddd-series-cove_odh6u3.png"
 draft: false

@@ -1,7 +1,6 @@
 ---
 title: "Tactical Building Blocks — Entities, Value Objects, and Aggregates"
-tags: ["DDD", "SystemDesign", "SoftwareArchitecture", "Backend", "OOP"]
-description: "The three core tactical DDD patterns explained with code: how to choose between Entity and Value Object, how to design Aggregates correctly, and the rules that keep your domain consistent."
+tags: ["ddd", "system-design", "software-architecture", "backend", "oop"]
 date: "2026-04-20"
 order: 4
 cover: "https://res.cloudinary.com/dmwr6giop/image/upload/q_auto/f_auto/v1776652900/ddd-ch4-building-blocks_j17gv3.png"
