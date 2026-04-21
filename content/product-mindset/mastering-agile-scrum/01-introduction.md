@@ -1,12 +1,10 @@
 ---
 title: "Introduction to Agile Scrum"
 order: 1
-tags: ["agile", "scrum", "product", "teamwork"]
+tags: ["agile", "scrum", "lean-methodology", "decision-making"]
 date: "2026-04-12"
 draft: false
 ---
-
-# Introduction to Agile Scrum
 
 ![Scrum Essentials Blueprint](https://res.cloudinary.com/dmwr6giop/image/upload/f_auto,q_auto/v1776139076/scrum-essentials-blueprint_e5owub.png)
 

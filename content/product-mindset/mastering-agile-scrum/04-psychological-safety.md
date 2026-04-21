@@ -1,12 +1,10 @@
 ---
 title: "Building High-Performing Agile Teams"
 order: 4
-tags: ["Agile", "Scrum", "Leadership", "DecisionMaking"]
+tags: ["agile", "scrum", "leadership", "decision-making"]
 date: "2026-04-14"
 draft: false
 ---
-
-# Building High-Performing Agile Teams
 
 Agile software development is built on continuous adaptation, relying heavily on iterative processes, frequent testing, and rapid adjustments. To handle this uncertainty and complexity, Agile teams must engage in close collaboration and honest communication. However, for team members to openly offer ideas, admit mistakes, ask for help, or provide feedback, one crucial element must be present: **Psychological Safety**.
 
