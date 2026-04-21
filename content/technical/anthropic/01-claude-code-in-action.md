@@ -1,7 +1,6 @@
 ---
 title: "Course Review: Mastering 'Claude Code in Action' by Stephen Grider"
-tags: ["AI-Driven", "Automation", "TechnicalWriting", "Productivity"]
-description: "The perfect starting point for your AI journey: A breakdown of the core concepts from the 'Claude Code in Action' course."
+tags: ["ai-driven", "automation", "technical-writing", "productivity"]
 date: "2026-04-14"
 order: 1
 lang: "en"

@@ -1,12 +1,10 @@
 ---
 title: "Scrum Anti-Patterns"
 order: 5
-tags: ["Agile", "Scrum", "LeanMethodology", "DecisionMaking"]
+tags: ["agile", "scrum", "lean-methodology", "decision-making"]
 date: "2026-04-14"
 draft: false
 ---
-
-# Scrum Anti-Patterns
 
 An anti-pattern is defined as a common response to a recurring problem that is usually ineffective and risks being highly counterproductive. In the world of Agile and Scrum, one of the most frequent and damaging anti-patterns occurs when a team is in the middle of a Sprint, and the Product Owner interrupts their flow to inject "high-priority" unplanned work.
 

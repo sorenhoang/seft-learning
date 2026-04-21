@@ -1,12 +1,10 @@
 ---
 title: "Scrum Events and Continuous Improvement"
 order: 3
-tags: ["Agile", "Scrum", "LeanMethodology", "DecisionMaking"]
+tags: ["agile", "scrum", "lean-methodology", "decision-making"]
 date: "2026-04-14"
 draft: false
 ---
-
-# Scrum Events and Continuous Improvement
 
 The Scrum framework uses fixed-length (timeboxed) events to create regularity and minimize the need for meetings not defined in Scrum. Rather than just putting your head down and working, these events provide formal opportunities to inspect and adapt your artifacts and progress.
 

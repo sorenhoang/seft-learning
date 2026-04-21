@@ -1,10 +1,8 @@
 ---
 title: "The Pragmatic Guide to Scrum: Foundations of Agile Delivery"
-category: "Product Thinking & Strategy"
-tags: ["LeanMethodology", "Agile", "Scrum", "DecisionMaking"]
+tags: ["lean-methodology", "agile", "scrum", "decision-making"]
 description: "An overview of Agile principles and the Scrum framework, focusing on the roles and values that drive successful product development."
 date: "2026-04-12"
-order: 1
 draft: false
 ---
 

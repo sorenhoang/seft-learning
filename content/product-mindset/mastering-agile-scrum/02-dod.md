@@ -1,12 +1,10 @@
 ---
 title: "Definition of Done"
 order: 2
-tags: ["Agile", "Scrum", "DecisionMaking", "LeanMethodology"]
+tags: ["agile", "scrum", "decision-making", "lean-methodology"]
 date: "2026-04-14"
 draft: false
 ---
-
-# Definition of Done
 
 ## Understanding the "Definition of Done" (DoD) - The Key to Quality Management in Agile
 

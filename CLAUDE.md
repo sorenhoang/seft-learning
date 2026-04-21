@@ -90,18 +90,25 @@ Client-side via Fuse.js. The index is a static Route Handler at `/api/search-ind
 | Field | Where | Notes |
 |---|---|---|
 | `title` | all | required |
-| `description` | category/series README, post | |
-| `tags` | series README, post, chapter | drives tag pages + search filter |
-| `order` | chapter only | integer, controls sidebar sort |
+| `description` | category/series README, post | ignored on chapters — don't set |
+| `tags` | series README, post, chapter | **lowercase-kebab-case only** (e.g. `"ci-cd"`, not `"CI/CD"` or `"CiCd"`). Comparison is case-sensitive — `"Agile"` and `"agile"` produce two separate tag pages. Tag pages are built only from series + post tags, not chapter tags (chapter tags are decorative only). |
+| `order` | chapter only | integer, controls sidebar sort. Not read on series README. |
 | `date` | series README, post, chapter | `YYYY-MM-DD` |
 | `draft` | series README, post, chapter | hidden in production |
 | `cover` | series README, post | declared in types, not yet rendered |
+| `lang` | chapter, post | optional — passed to `AudioPlayer` (`"en"` → `en-US`, `"vi"` → `vi-VN`). Defaults to `"en"`. |
+
+**Do not set these fields** — they were used historically but are now ignored by `content.ts`:
+- `category:` in any frontmatter. The URL-segment folder *is* the category.
+- `description:` on a chapter file.
+- `order:` on a series README.
 
 ### Key constraints
 
 - **Never use `toLocaleDateString()`** — use `formatDate(dateStr)` from `src/lib/date.ts` instead. It parses `YYYY-MM-DD` strings deterministically to avoid server/client hydration mismatches.
 - `params` and `searchParams` props in page/layout components are **Promises** in Next.js 15+ and must be `await`ed. In Route Handlers, `request.nextUrl.searchParams` is a synchronous Web API `URLSearchParams` — do not await it.
 - The 3-column reading layout (Sidebar + content + TOC) hides `Sidebar` on `< lg` and `TableOfContents` on `< xl`. `MobileSidebar` provides chapter navigation on mobile via a bottom drawer (chapter pages only).
+- **Do not repeat the chapter/post title as an `# H1`** in the markdown body. The chapter page (`src/app/[category]/[slug]/[chapter]/page.tsx`) already renders `currentChapter.title` as the page `<h1>`. Start the body at `##` so there is only one H1 per page.
 
 ## Workflow conventions
 

@@ -1,7 +1,6 @@
 ---
 title: "AI Fluency: Moving Beyond Literacy to Strategic Mastery"
-tags: ["AI-Driven", "DecisionMaking", "ProblemSolving", "Leadership", "ProductStrategy"]
-description: "A deep dive into why AI Literacy is no longer enough for Senior Engineers. Discover the AI Fluency Framework and the 4Ds of high-impact AI collaboration."
+tags: ["ai-driven", "decision-making", "problem-solving", "leadership", "product-strategy"]
 date: "2026-04-14"
 order: 2
 draft: false
