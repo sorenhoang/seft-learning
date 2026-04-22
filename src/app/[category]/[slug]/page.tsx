@@ -181,7 +181,7 @@ export default async function SlugPage({ params }: PageProps) {
   const post = cat.posts.find((p) => p.slug === slug);
   if (!post) notFound();
 
-  const { content } = getPostContent(category, slug);
+  const { content, data: frontmatter } = getPostContent(category, slug);
   const html = await markdownToHtml(content);
   const toc = extractToc(content);
 
@@ -228,7 +228,7 @@ export default async function SlugPage({ params }: PageProps) {
             </div>
           </header>
 
-          <AudioPlayer content={content} />
+          <AudioPlayer content={content} lang={frontmatter.lang as string | undefined} />
           <MarkdownRenderer html={html} />
         </article>
 
