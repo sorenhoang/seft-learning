@@ -21,7 +21,12 @@
       "Bash(git commit -m ' *)",
       "Bash(git fetch *)",
       "Bash(git merge *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "WebFetch(domain:alistair.cockburn.us)",
+      "WebFetch(domain:blog.cleancoder.com)",
+      "WebFetch(domain:jeffreypalermo.com)",
+      "WebFetch(domain:en.wikipedia.org)",
+      "WebFetch(domain:jmgarridopaz.github.io)"
     ]
   }
 }
