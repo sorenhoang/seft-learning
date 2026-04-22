@@ -12,7 +12,16 @@
       "Bash(taskkill /PID 5376 /F)",
       "Bash(cmd /c \"taskkill /PID 5376 /F\")",
       "mcp__chrome-devtools__navigate_page",
-      "mcp__chrome-devtools__take_screenshot"
+      "mcp__chrome-devtools__take_screenshot",
+      "WebFetch(domain:dev.to)",
+      "WebFetch(domain:martinfowler.com)",
+      "Bash(zero rewrite-exec *)",
+      "Bash(taskkill *)",
+      "Bash(cmd *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git fetch *)",
+      "Bash(git merge *)",
+      "Bash(git commit *)"
     ]
   }
 }
