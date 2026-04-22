@@ -26,7 +26,8 @@
       "WebFetch(domain:blog.cleancoder.com)",
       "WebFetch(domain:jeffreypalermo.com)",
       "WebFetch(domain:en.wikipedia.org)",
-      "WebFetch(domain:jmgarridopaz.github.io)"
+      "WebFetch(domain:jmgarridopaz.github.io)",
+      "WebFetch(domain:www.lennysnewsletter.com)"
     ]
   }
 }
