@@ -7,6 +7,12 @@ type PlayState = "idle" | "playing" | "paused";
 const SPEEDS = [0.5, 0.75, 1, 1.25, 1.5, 2] as const;
 type Speed = (typeof SPEEDS)[number];
 
+const SKIP_SECONDS = 5;
+// Rough English-TTS estimate at rate=1.0 (~160 wpm × ~6 chars/word ÷ 60).
+// Scaled by playback speed when seeking. Seeks land on word boundaries after
+// the next onboundary event, so perfect accuracy isn't required.
+const CHARS_PER_SECOND = 16;
+
 const LANG_MAP: Record<string, string> = {
   en: "en-US",
   vi: "vi-VN",
@@ -99,6 +105,18 @@ export default function AudioPlayer({ content, lang = "en" }: AudioPlayerProps) 
     [lang, speed]
   );
 
+  // Detach the current utterance's handlers before cancelling so its
+  // cancel-triggered onend can't race into the state we're about to set.
+  const resetSpeech = useCallback(() => {
+    const u = utteranceRef.current;
+    if (u) {
+      u.onend = null;
+      u.onerror = null;
+      u.onboundary = null;
+    }
+    window.speechSynthesis?.cancel();
+  }, []);
+
   const handlePlay = useCallback(() => {
     const synth = window.speechSynthesis;
     const text = cleanedTextRef.current;
@@ -111,12 +129,12 @@ export default function AudioPlayer({ content, lang = "en" }: AudioPlayerProps) 
     }
 
     // New play from current charIndex (0 for fresh start)
-    synth.cancel();
+    resetSpeech();
     const u = buildUtterance(text, charIndexRef.current);
     utteranceRef.current = u;
     synth.speak(u);
     setState("playing");
-  }, [state, buildUtterance]);
+  }, [state, buildUtterance, resetSpeech]);
 
   const handlePause = useCallback(() => {
     window.speechSynthesis?.pause();
@@ -124,11 +142,50 @@ export default function AudioPlayer({ content, lang = "en" }: AudioPlayerProps) 
   }, []);
 
   const handleStop = useCallback(() => {
-    window.speechSynthesis?.cancel();
+    resetSpeech();
     setState("idle");
     setProgress(0);
     charIndexRef.current = 0;
-  }, []);
+  }, [resetSpeech]);
+
+  const handleSkip = useCallback(
+    (deltaSec: number) => {
+      const text = cleanedTextRef.current;
+      if (!text) return;
+      const totalLen = text.length;
+
+      const charsDelta = Math.round(deltaSec * CHARS_PER_SECOND * speed);
+      const newChar = Math.max(0, Math.min(totalLen, charIndexRef.current + charsDelta));
+      charIndexRef.current = newChar;
+      setProgress(Math.min(100, Math.round((newChar / totalLen) * 100)));
+
+      const synth = window.speechSynthesis;
+
+      if (state === "playing") {
+        resetSpeech();
+        if (newChar < totalLen) {
+          const u = buildUtterance(text, newChar);
+          utteranceRef.current = u;
+          synth.speak(u);
+        } else {
+          setState("idle");
+        }
+      } else if (state === "paused") {
+        resetSpeech();
+        if (newChar < totalLen) {
+          const u = buildUtterance(text, newChar);
+          utteranceRef.current = u;
+          synth.speak(u);
+          synth.pause();
+        } else {
+          setState("idle");
+          setProgress(0);
+          charIndexRef.current = 0;
+        }
+      }
+    },
+    [state, speed, buildUtterance, resetSpeech]
+  );
 
   const handleSpeedChange = useCallback(
     (newSpeed: Speed) => {
@@ -137,7 +194,7 @@ export default function AudioPlayer({ content, lang = "en" }: AudioPlayerProps) 
       if (state === "playing") {
         const synth = window.speechSynthesis;
         const text = cleanedTextRef.current;
-        synth.cancel();
+        resetSpeech();
         const u = new SpeechSynthesisUtterance(text.slice(charIndexRef.current));
         u.lang = LANG_MAP[lang] ?? "en-US";
         u.rate = newSpeed;
@@ -162,7 +219,7 @@ export default function AudioPlayer({ content, lang = "en" }: AudioPlayerProps) 
         synth.speak(u);
       }
     },
-    [state, lang]
+    [state, lang, resetSpeech]
   );
 
   const isPlaying = state === "playing";
@@ -190,6 +247,34 @@ export default function AudioPlayer({ content, lang = "en" }: AudioPlayerProps) 
             </svg>
           )}
         </button>
+
+        {/* Skip controls — only visible when active */}
+        {isActive && (
+          <>
+            <button
+              onClick={() => handleSkip(-SKIP_SECONDS)}
+              aria-label="Skip back 5 seconds"
+              className="flex h-7 shrink-0 items-center gap-1 rounded-full border border-zinc-300 px-2.5 text-zinc-500 transition hover:border-zinc-400 hover:text-zinc-700 dark:border-zinc-600 dark:text-zinc-400 dark:hover:text-zinc-200"
+            >
+              <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="11 17 6 12 11 7" />
+                <polyline points="18 17 13 12 18 7" />
+              </svg>
+              <span className="text-[10px] font-semibold">5s</span>
+            </button>
+            <button
+              onClick={() => handleSkip(SKIP_SECONDS)}
+              aria-label="Skip forward 5 seconds"
+              className="flex h-7 shrink-0 items-center gap-1 rounded-full border border-zinc-300 px-2.5 text-zinc-500 transition hover:border-zinc-400 hover:text-zinc-700 dark:border-zinc-600 dark:text-zinc-400 dark:hover:text-zinc-200"
+            >
+              <span className="text-[10px] font-semibold">5s</span>
+              <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="13 17 18 12 13 7" />
+                <polyline points="6 17 11 12 6 7" />
+              </svg>
+            </button>
+          </>
+        )}
 
         {/* Stop button — only visible when active */}
         {isActive && (
