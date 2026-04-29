@@ -116,6 +116,18 @@ Client-side via Fuse.js. The index is a static Route Handler at `/api/search-ind
 - **Blog post length**: standalone posts should be concise — aim for **100–250 lines** of markdown. Cut redundant sections, merge related points, and avoid over-explaining concepts the audience already understands. Tighter is better.
 - **Images**: all images are hosted on Cloudinary (cloud name: `dmwr6giop`). Never reference local paths like `/images/...`. Always use the Cloudinary URL format with `f_auto,q_auto` transformations: `https://res.cloudinary.com/dmwr6giop/image/upload/f_auto,q_auto/{version}/{filename}`. If a contributor mentions adding an image, remind them to upload to Cloudinary first.
 
+## Project skills
+
+Three project-level skills live in `.claude/skills/` and are tracked in git. Use the `Skill` tool (or follow the SKILL.md instructions inline) when the user's request matches:
+
+| Skill | Use when the user wants to… |
+|---|---|
+| `write-blog` | …draft a **standalone post** (single `.md` file under a category). Enforces frontmatter, 100–250 line target, no-`# H1`-in-body, lowercase-kebab-case tags, and the AudioPlayer prompt. |
+| `write-series` | …draft a **multi-chapter series** (subfolder with `README.md` + numbered chapters). Forces outline sign-off before writing chapter 1, gets `order` discipline right, and prevents the common `description:` / `order:` frontmatter mistakes. |
+| `research-content` | …**research a topic before drafting**. Returns a thesis-driven research brief (sources, debates, pitfalls, proposed angle, suggested format) — does NOT write the post. |
+
+If the user asks "write a post about X" with no signal about research, ask whether they want `research-content` first or already have the angle. The skills are layered: research → write-blog or research → write-series.
+
 ## Environment variables
 
 ```bash
