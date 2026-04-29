@@ -59,6 +59,7 @@ description: "A short summary shown on cards and in search results."
 tags: ["tag-one", "tag-two"]
 date: "2024-04-01"
 draft: false
+lang: "en"
 ---
 
 Your content here...
@@ -104,10 +105,13 @@ order: 1
 tags: ["tag-one"]
 date: "2024-04-01"
 draft: false
+lang: "en"
 ---
 
 Chapter content here...
 ```
+
+> Do **not** repeat the chapter title as an `# H1` in the body — the page already renders it as the H1. Start your body at `##`.
 
 > `order` controls the position in the sidebar. Chapters are sorted ascending by this number. Use gaps (`1, 3, 5`) if you plan to insert chapters later.
 
@@ -174,11 +178,15 @@ $$
 | Field | Type | Required | Description |
 |---|---|---|---|
 | `title` | string | yes | Displayed as page heading and in search |
-| `description` | string | recommended | Shown on cards and in search results |
-| `tags` | string[] | optional | Used for tag pages and search filtering |
+| `description` | string | recommended | Shown on cards and in search results. **Do not set on chapters** — it is ignored. |
+| `tags` | string[] | optional | Used for tag pages and search filtering. See note below. |
 | `order` | number | chapters only | Sort order in the sidebar |
 | `date` | string | optional | Format: `YYYY-MM-DD` |
 | `draft` | boolean | optional | `true` = hidden in production |
+| `lang` | string | optional | `"en"` or `"vi"` — passed to the audio player. Defaults to `"en"`. |
+| `cover` | string | optional | Cover image URL (declared but not yet rendered). |
+
+> **Tag formatting:** use **lowercase-kebab-case** only (e.g. `"ci-cd"`, not `"CI/CD"` or `"CiCd"`). Tag comparison is case-sensitive — `"Agile"` and `"agile"` will create two separate tag pages.
 
 ---
 
