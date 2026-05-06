@@ -27,7 +27,13 @@
       "WebFetch(domain:jeffreypalermo.com)",
       "WebFetch(domain:en.wikipedia.org)",
       "WebFetch(domain:jmgarridopaz.github.io)",
-      "WebFetch(domain:www.lennysnewsletter.com)"
+      "WebFetch(domain:www.lennysnewsletter.com)",
+      "Bash(mkdir -p /Users/binhhoang/onlysoren/seft-learning/content/technical/docker-in-depth)",
+      "Bash(npx next *)",
+      "Bash(./node_modules/.bin/next build *)"
+    ],
+    "additionalDirectories": [
+      "/Users/binhhoang/onlysoren/seft-learning/content/technical"
     ]
   }
 }
